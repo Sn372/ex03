@@ -21,10 +21,11 @@
 	<!-- MyBatis-Spring -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="configLocation" value="classpath:mybatis-config.xml" />
+		<property name="mapperLocations" value="classpath:/mapper/*_SQL.xml" />
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 
-	<!-- Maper -->
+	<!-- Mapper -->
 	<bean id="bookMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="mapperInterface" value="com.mycompany.mapper.BookMapper" />
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />

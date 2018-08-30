@@ -22,9 +22,7 @@ public class BooksController {
 
 	@RequestMapping(value = "/books", method = RequestMethod.GET)
 	public String index(Model model) {
-		// 맵퍼로부터 리스트를 받아옴.
 		List<Book> books = bookMapper.getList();
-		// 모델을 통해 뷰페이지로 데이터를 전달
 		model.addAttribute("books", books);
 		return "books/index";
 	}
